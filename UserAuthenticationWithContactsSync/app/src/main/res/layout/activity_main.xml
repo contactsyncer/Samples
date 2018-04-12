@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.apps.meet.userauthentication.DisplayContactsActivity">
+
+    <RelativeLayout
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#138D75"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chats_text"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:elevation="20dp"
+            android:text="Contacts"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cardList"
+        android:layout_below="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <ImageView
+        android:id="@+id/add_contact_below"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/add_user_blue"
+        android:layout_margin="10dp"/>
+<RelativeLayout
+    android:id="@+id/no_contacts_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:visibility="gone">
+
+    <TextView
+        android:id="@+id/noContacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="No phone contacts using this app!"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/noContacts"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="We'll notify you when someone in your contacts is available!"
+        android:textSize="16sp"/>
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
