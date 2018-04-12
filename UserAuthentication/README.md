@@ -1,4 +1,4 @@
-# Samples
+# UserAuthentication
 Make sure you're following this guide step by step:-
 
 <b>Prerequisite:-</b>
