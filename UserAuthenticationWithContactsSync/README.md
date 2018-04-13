@@ -1,4 +1,4 @@
-# Samples
+# UserAuthenticationWithContactSync
 Make sure you're following this guide step by step:-
 
 <b>Prerequisite:-</b>
@@ -25,5 +25,10 @@ d) Click <b>"Register"</b> app and then download and copy google-services.json f
 e) You can skip next step(Add Firebase SDK) as this is already added in this github sample. Click on <b>finish</b>.  
 
 4) Copy your secret key inside Utils.java file and simply run the sample.  
+
+<b>Enabling Push Notification</b>
+1) Go to your Firebase project overview section and then click on project settings.
+2) On right side, click on <b>Cloud Messaging</b> tab and copy your <b>Legacy Server Key</b>
+3) Email us this key at support@participateme.com from your registered email id so that we can configure push notification for your project.
 
 
