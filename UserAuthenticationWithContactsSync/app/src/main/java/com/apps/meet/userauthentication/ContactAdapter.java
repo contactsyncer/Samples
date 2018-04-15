@@ -53,7 +53,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
             contactViewHolder.vProfileImage.setImageDrawable(drawable);
 
-
     }
 
     @Override
@@ -62,8 +61,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
                     from(viewGroup.getContext()).
                     inflate(R.layout.card_layout, viewGroup, false);
 
-
-
             return new ContactViewHolder(itemView);
     }
 
@@ -71,46 +68,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
         protected TextView vName;
         protected ImageView vProfileImage;
-        protected CheckBox vCheckBox;
         protected ImageView vCircleProfileImage;
 
         public ContactViewHolder(View v) {
             super(v);
             vName =  (TextView) v.findViewById(R.id.txtName);
             vProfileImage = (ImageView)  v.findViewById(R.id.profile_image);
-            vCheckBox = (CheckBox) v.findViewById(R.id.checkBox);
             vCircleProfileImage = (ImageView)  v.findViewById(R.id.profile_image_circle);
             v.setOnLongClickListener(this);
-
-            vCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            if(isChecked){
-                mCheckedPos.add(getAdapterPosition());
-            }
-            else{
-                if(mCheckedPos.contains(getAdapterPosition()))
-                mCheckedPos.remove(new Integer(getAdapterPosition()));
-            }
-
-            if (mCheckedPos.size() > 0){
-                mContext.findViewById(R.id.button2).setVisibility(View.VISIBLE);
-                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mContext.findViewById(R.id.add_contact_below).getLayoutParams();
-                params.removeRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-                mContext.findViewById(R.id.add_contact_below).setLayoutParams(params);
-            }
-            else {
-                mContext.findViewById(R.id.button2).setVisibility(View.GONE);
-                                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mContext.findViewById(R.id.add_contact_below).getLayoutParams();
-                                params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-                                // params.addRule(RelativeLayout.LEFT_OF, R.id.id_to_be_left_of);
-
-                                mContext.findViewById(R.id.add_contact_below).setLayoutParams(params);}
-
-                            }
-                        });
-
 
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
