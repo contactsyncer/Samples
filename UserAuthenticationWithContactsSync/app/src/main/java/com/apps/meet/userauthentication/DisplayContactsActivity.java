@@ -20,6 +20,13 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -63,10 +70,7 @@ public class DisplayContactsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sActivityContext = this;
-
         Intent in = getIntent();
-
         String code = in.getStringExtra("code");
         mPhone = in.getStringExtra("phone");
 
@@ -79,7 +83,6 @@ public class DisplayContactsActivity extends AppCompatActivity {
         mProgressDialog.show();
 
         Log.d("DisplayContactsActivity", "phone is " + mPhone + " and code is " + code);
-
 
         ((ImageView) findViewById(R.id.add_contact_below)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,34 +111,24 @@ public class DisplayContactsActivity extends AppCompatActivity {
         }
     }
 
-
-
-
     private List<ContactInfo> createList() {
 
         List<ContactInfo> result = new ArrayList<ContactInfo>();
-
         mPhoneList = new ArrayList<>();
         mNameList = new ArrayList<>();
-
         mCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
 
         while (mCursor.moveToNext()) {
 
-            // ContactInfo ci = new ContactInfo();
-
             String name = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-
             String phonenumber = mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
-            if (!phonenumber.contains("+"))
-
+            if (!phonenumber.contains("+")) {
                 phonenumber = phonenumber.replaceAll("[\\W_]", "").replaceFirst("^0*", "");
-
-            else
+            }
+            else {
                 phonenumber = "+" + phonenumber.replaceAll("[\\W_]", "").replaceFirst("^0*", "");
-
-          //  Log.d("phone number is ", phonenumber);
+            }
 
             if (!mPhoneList.contains(phonenumber)) {
                 mPhoneList.add(phonenumber);
@@ -245,6 +238,22 @@ public class DisplayContactsActivity extends AppCompatActivity {
     public void onContactClick(int pos) {
 
         Log.d("name clicked is ", result.get(pos).name + "  token is " + mDeviceTokens.get(pos));
+
+        ArrayList<String> deviceTokens = new ArrayList<>();
+        ArrayList<String> keys = new ArrayList<>();
+        ArrayList<String> values = new ArrayList<>();
+
+        deviceTokens.add(mDeviceTokens.get(pos));
+        keys.add("key1");
+        keys.add("key2");
+        keys.add("key3");
+        keys.add("key4");
+        values.add("value1");
+        values.add("value2");
+        values.add("value3");
+        values.add("value4");
+
+        Notification.notifyUsers(deviceTokens, keys, values, this);
 
     }
 
@@ -368,7 +377,6 @@ public class DisplayContactsActivity extends AppCompatActivity {
         mFromAddContact = false;
         //getDelegate().onStart();
     }
-
 
 
 }
