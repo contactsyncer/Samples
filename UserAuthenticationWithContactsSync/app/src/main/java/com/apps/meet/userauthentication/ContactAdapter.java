@@ -6,10 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
@@ -22,7 +19,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
     private List<ContactInfo> mContactList;
     private DisplayContactsActivity mContext;
-    private ArrayList<Integer> mCheckedPos = new ArrayList<>();
 
     public ContactAdapter(List<ContactInfo> contactList, final DisplayContactsActivity context) {
         this.mContactList = contactList;
