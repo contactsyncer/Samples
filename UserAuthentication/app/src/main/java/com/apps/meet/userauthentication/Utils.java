@@ -15,7 +15,7 @@ public class Utils {
 
 
     public static final String SIGN_UP_REQUEST_URL = "http://participateme.com/contactsyncer/signin_app.php";
-    public static final String SECRET_KEY = "xPbuGDGxPuLC";
+    public static final String SECRET_KEY = "YOUR_SECRET_KEY";
 
     public static void showNetworkDialog(final Activity context) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
