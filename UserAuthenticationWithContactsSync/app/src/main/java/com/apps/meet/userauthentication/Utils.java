@@ -15,12 +15,12 @@ public class Utils {
 
 
     public static final String SIGN_UP_REQUEST_URL = "http://participateme.com/contactsyncer/signin_app.php";
-    public static final String SECRET_KEY = "xPbuGDGxPuLC";
+    public static final String SECRET_KEY = "YOUR_SECRET_KEY";
     public static final String VERIFY_PHONE_NUMBERS_REQUEST_URL = "http://participateme.com/contactsyncer/verifyphonenumbers.php";
     public static final String NOTIFICATION_REQUEST_URL = "http://participateme.com/contactsyncer/notify_user.php";
     public static final String NOTIFICATION_BODY = "This is default body";
     public static final String NOTIFICATION_TITLE = "This is notification title";
-    public static final String APP_ID = "AIzaSyCVHNOHCXRP_nJyoWEeriXRsbNLMYo5aj4";
+    public static final String APP_ID = "YOUR_APP_ID";
 
     public static void showNetworkDialog(final Activity context) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
