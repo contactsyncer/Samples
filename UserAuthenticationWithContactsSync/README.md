@@ -9,7 +9,7 @@ b) Enter project name and select your region, then click <b>create project</b>.
 c) Now in your project dashboard, click on Authentication. Then on right side, click on <b>"Sign-in method"</b> and enable the "Phone" authentication. Initially it should show as "Disabled".  
 d) Click on <b>Save</b>.  
 
-2) If you've not requested your ContactSyncer <b>API key and Secret key</b>, please request one from here:-  
+2) If you've not requested your ContactSyncer <b>API key and Secret key</b>, please request one from here:- http://participateme.com/contactsyncer/#contact  
 
 <b>Integrating Code:-</b>
 1) Git clone or download the sample  
